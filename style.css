@@ -1,0 +1,249 @@
+/* ------------------ ############ RESETS ############ ------------------ */
+
+html, body, div, span, section, ul, li, h1, h2, h3, h4, h5 {
+	box-sizing: border-box;
+	color: #222;
+	font-family: "Kozuka Gothic Pro";
+	font-family: 'Abril Fatface', cursive;
+	font-weight: lighter;
+	margin: 0;
+	padding: 0;
+}
+
+ul, li {
+	list-style: none;
+}
+
+.svg-defs {
+	left: 0;
+	pointer-events: none;
+	position: absolute;
+	top: 0;
+  	z-index: -1;
+}
+
+
+/* ------------------ ############ GENERAL ############ ------------------ */
+#perfect-app-wrapper {
+	height: 100vh;
+	left: 0;
+	overflow: hidden;
+	position: absolute;
+	top: 0;
+    width: 100vw;
+}
+
+
+/* ------------------ ############ ROOM SCENE ############ ------------------ */
+
+.room-scene__svg-wrapper,
+.room-scene__image {
+    height: 100vh;
+    position: absolute;
+	right: 0;
+	top: 0;
+    width: 143.582vh;
+}
+
+.room-scene__svg-wrapper {
+    overflow: hidden;
+    z-index: 2;
+}
+
+.room-scene__svg {
+    position: absolute;
+	right: 0;
+	top: -5.07%;
+    width: 23.68125701%;
+    z-index: 3;
+}
+
+
+/* ------------------ ############ ROOM SCENE - ZOOMED ############ ------------------ */
+
+.room-scene-zoom {
+    border: 1px solid #fff;
+	bottom: -2vh;
+	border-radius: 50%;
+	height: 50vh;
+	left: -2vh;
+    overflow: hidden;
+    position: absolute;
+	top: auto;
+	width: 50vh;
+/*
+	border-radius: 5%;
+	height: 100vh;
+	left: -2vh;
+    overflow: hidden;
+    position: absolute;
+	top: 0;
+	width: 100vw;*/
+    z-index: 2;
+}
+
+.room-scene-zoom__content-wrapper {
+    animation: pan-scene 10s infinite;
+    position: absolute;
+	transform: translate3d(0px, 0px, 0px);
+}
+
+.room-scene-zoom__svg-wrapper {
+    position: absolute;
+}
+
+.room-scene-zoom__content-wrapper,
+.room-scene-zoom__svg-wrapper,
+.room-scene-zoom__svg-wrapper .room-scene__svg,
+.room-scene-zoom__image {
+    height: 200vh;
+    left: 0;
+    max-height: 2400px;
+    max-width: 1200px;
+    top: 0;
+    width: 100vh;
+}
+
+.room-scene__title {
+    left: 0;
+    position: absolute;
+    top: 0;
+    z-index: 5;
+}
+
+
+/* ------------------ ############ VIEWPORT SIZE ADJUSTMENTS ############ ------------------ */
+
+@media screen and (min-width: 768px) {
+}
+
+@media screen and (min-aspect-ratio: 20 / 19) {
+
+    /*flex-direction: row;
+    flex-direction: column;*/
+}
+@media screen and (min-width: 1024px) and (min-aspect-ratio: 1 / 1) {
+}
+
+/* ------------------ ############ VIEWPORT ORIENTATION ADJUSTMENTS ############ ------------------ */
+
+
+@media screen and (min-aspect-ratio: 4/3) { /* long landscape */
+    .room-scene__svg-wrapper,
+	.room-scene__image {
+        height: 110vh;
+		width: 157.94vh;
+    }
+}
+
+@media screen and (min-aspect-ratio: 3/2) { /* longer landscape */
+    .room-scene__svg-wrapper,
+	.room-scene__image {
+        height: 125vh;
+		width: 179.4775vh;
+    }
+}
+
+@media screen and (min-aspect-ratio: 2/1) { /* longest landscape */
+    .room-scene__svg-wrapper,
+	.room-scene__image {
+        height: 140vh;
+        width: 201.015vh;
+    }
+}
+
+
+
+
+/* ------------------ ############ ANIMATIONS ############ ------------------ */
+
+@keyframes pan-scene {
+  0 {
+      transform: translate3d(0px, 0px, 0px);
+  }
+  50% {
+      transform: translate3d(-10vw, -100vh, 0px);
+  }
+  100% {
+      transform: translate3d(0px, 0px, 0px);
+  }
+}
+
+
+/* ------------------ ############ jjjjjjjj ############ ------------------ */
+
+
+
+/* ------------------ ############ jjjjjjjj ############ ------------------ */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* --------- pppppppp ----------- */
+/* --------- pppppppp ----------- */
+
+
+
+
+
+/*
+------------------ ############ ANIMATION EXAMPLE ############ ------------------
+
+
+
+
+
+
+
+
+
+------------------ ############ OLD STUFF ############ ------------------
+
+.scene-grid__scene:nth-child(n+5) {
+  display: none; }
+
+@media screen and (orientation: portrait) {
+    .room-scene__wrapper svg {
+        border: 2px solid #ccccff;
+        height: 140vh;
+        width: calc( 140vh * 1.43582);
+    }
+
+    @media screen and (max-aspect-ratio: 3/4) {
+        .room-scene__wrapper svg {
+            border: 2px solid #9999cc;
+            height: 125vh;
+            width: calc( 125vh * 1.43582);
+        }
+    }
+
+    @media screen and (max-aspect-ratio: 2/3) {
+        .room-scene__wrapper svg {
+            border: 2px solid #666699;
+            height: 110vh;
+            width: calc( 110vh * 1.43582);
+        }
+    }
+
+    @media screen and (max-aspect-ratio: 1/2) {
+        .room-scene__wrapper svg {
+            border: 2px solid #333366;
+        }
+    }
+}
+
+*/
