@@ -11,44 +11,57 @@
 
 <div id="perfect-app-wrapper">
 
-	<div class="room-scene">
-		<div class="room-scene__svg-wrapper">
-		<svg class="room-scene__svg" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" preserveAspectRatio="xMinYMin meet" height="100%" width="100%">
-			<defs class="svg-defs">
-				<mask id="scene-zoom__mask" preserveAspectRatio="xMinYMin meet">
-					<image xlink:href="./images/room-walls-export-mask.png" x="0" y="0" height="100%" width="100%" />
-				</mask>
-				<filter id="scene-zoom__filter">
-					<feFlood id="stain-sample__filter--tint" flood-color="#abcdef" result="tintHue" />
-					<feBlend mode="multiply" in="tintHue" in2="SourceGraphic" result="darkenedSample" />
-				</filter>
-			</defs>
-			<image xlink:href="./images/room-walls-export.png" filter="url(#scene-zoom__filter)" mask="url(#scene-zoom__mask)" x="0" y="0" height="100%" width="100%" />
-		</svg>
-		</div>
-		<img class="room-scene__image" src="./images/room-small.jpg" />
-		<!-- <h1 class="room-scene__title">Verdant Blue</h1> -->
-	</div>
+<div class="room__wrapper svg-defs-wrapper">
+	<svg class="room__svg" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" preserveAspectRatio="xMinYMin meet">
+		<defs class="svg-defs">
+			<mask id="room-mask" preserveAspectRatio="xMinYMin meet">
+				<image xlink:href="./images/room-mask.png" x="0" y="0" />
+			</mask>
+			<filter id="room-filter-1">
+				<feFlood id="stain-sample__filter--tint" flood-color="#abcdef" result="tintHue" />
+				<feBlend mode="multiply" in="tintHue" in2="SourceGraphic" result="darkenedSample" />
+			</filter>
+		</defs>
+	</svg>
+</div>
 
-	<div class="room-scene-zoom">
-		<div class="room-scene-zoom__content-wrapper">
-			<div class="room-scene-zoom__svg-wrapper">
-				<svg class="room-scene__svg" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" preserveAspectRatio="xMinYMin meet" >
+<div class="room__wrapper">
+	<!-- <div class="room-image-wrapper"> -->
+		<svg class="room__svg" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" preserveAspectRatio="xMidYMid slice" viewBox="0 0 1300 1149">
+			<image class="room__image" xlink:href="./images/room.jpg" />
+		</svg>
+	<!-- </div> -->
+	<!-- <h1 class="room__title">Verdant Blue</h1> -->
+</div>
+
+<div class="room__wrapper room-b">
+	<!-- <div class="room-image-wrapper"> -->
+		<svg class="room__svg" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" preserveAspectRatio="xMinYMin meet">
+			<image class="room__image" xlink:href="./images/room.jpg" filter="url(#room-filter-1)" mask="url(#room-mask)" x="0" y="0" height="100%" width="100%" />
+		</svg>
+	<!-- </div> -->
+	<!-- <h1 class="room__title">Verdant Blue</h1> -->
+</div>
+
+<!-- 	<div class="room-zoom">
+		<div class="room-zoom__content-wrapper">
+			<div class="room-zoom__svg-wrapper">
+				<svg class="room__svg" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" preserveAspectRatio="xMinYMin meet" >
 					<defs class="svg-defs">
 						<mask id="scene-zoom__mask" preserveAspectRatio="xMinYMin meet">
-							<image class="room-scene-zoom__image" xlink:href="./images/room-walls-export-zoom-mask.png" x="0" y="0" />
+							<image class="room-zoom__image" xlink:href="./images/room-walls-export-zoom-mask.png" x="0" y="0" />
 						</mask>
 						<filter id="scene-zoom__filter">
 							<feFlood id="stain-sample__filter--tint" flood-color="#abcdef" result="tintHue" />
 							<feBlend mode="multiply" in="tintHue" in2="SourceGraphic" result="darkenedSample" />
 						</filter>
 					</defs>
-					<image class="room-scene-zoom__image" xlink:href="./images/room-walls-export-zoom.png" filter="url(#scene-zoom__filter)" mask="url(#scene-zoom__mask)" x="0" y="0" />
+					<image class="room-zoom__image" xlink:href="./images/room-walls-export-zoom.png" filter="url(#scene-zoom__filter)" mask="url(#scene-zoom__mask)" x="0" y="0" />
 				</svg>
 			</div>
-			<img class="room-scene-zoom__image" src="./images/room-export-zoom.jpg" />
+			<img class="room-zoom__image" src="./images/room-export-zoom.jpg" />
 		</div>
-	</div>
+	</div> -->
 
 </div>
 

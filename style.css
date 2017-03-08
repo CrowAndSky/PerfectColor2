@@ -25,7 +25,8 @@ ul, li {
 
 /* ------------------ ############ GENERAL ############ ------------------ */
 #perfect-app-wrapper {
-	height: 100vh;
+    background-color: #aaccff;
+	height: 100%;
 	left: 0;
 	overflow: hidden;
 	position: absolute;
@@ -36,32 +37,51 @@ ul, li {
 
 /* ------------------ ############ ROOM SCENE ############ ------------------ */
 
-.room-scene__svg-wrapper,
-.room-scene__image {
-    height: 100vh;
-    position: absolute;
-	right: 0;
-	top: 0;
-    width: 143.582vh;
+.room__image {
+    display: inline-block;
+    min-height: 100%;
+    min-width: 100%;
+    object-fit: cover;
+    object-position: 50% 50%;
 }
 
-.room-scene__svg-wrapper {
+.room__svg {
+    background-color: red;
+    height: 100%;
+    width: 100%;
+    /*object-fit: cover;
+    object-position: 50% 50%;*/
+}
+
+.room__wrapper {
+    background-color: #bada55;
+    height: 100%;
+    position: absolute;
+	left: 0;
+	top: 0;
+    width: calc( 50% - 2px );
+    z-index: 1;
+}
+
+.room-b {
+    background-color: magenta;
+    left: calc( 50% + 2px );
+}
+
+.svg-defs-wrapper {
+    opacity: 0;
+    z-index: -1;
+}
+.room__svg-wrapper {
     overflow: hidden;
     z-index: 2;
 }
 
-.room-scene__svg {
-    position: absolute;
-	right: 0;
-	top: -5.07%;
-    width: 23.68125701%;
-    z-index: 3;
-}
 
 
 /* ------------------ ############ ROOM SCENE - ZOOMED ############ ------------------ */
 
-.room-scene-zoom {
+.room-zoom {
     border: 1px solid #fff;
 	bottom: -2vh;
 	border-radius: 50%;
@@ -82,29 +102,29 @@ ul, li {
     z-index: 2;
 }
 
-.room-scene-zoom__content-wrapper {
+.room-zoom__content-wrapper {
     animation: pan-scene 10s infinite;
     position: absolute;
 	transform: translate3d(0px, 0px, 0px);
 }
 
-.room-scene-zoom__svg-wrapper {
+.room-zoom__svg-wrapper {
     position: absolute;
 }
 
-.room-scene-zoom__content-wrapper,
-.room-scene-zoom__svg-wrapper,
-.room-scene-zoom__svg-wrapper .room-scene__svg,
-.room-scene-zoom__image {
-    height: 200vh;
+.room-zoom__content-wrapper,
+.room-zoom__svg-wrapper,
+.room-zoom__svg-wrapper .room__svg,
+.room-zoom__image {
+/*    height: 200vh;
     left: 0;
     max-height: 2400px;
     max-width: 1200px;
     top: 0;
-    width: 100vh;
+    width: 100vh;*/
 }
 
-.room-scene__title {
+.room__title {
     left: 0;
     position: absolute;
     top: 0;
@@ -129,27 +149,27 @@ ul, li {
 
 
 @media screen and (min-aspect-ratio: 4/3) { /* long landscape */
-    .room-scene__svg-wrapper,
-	.room-scene__image {
+    /*.room__svg-wrapper,
+	.room__image {
         height: 110vh;
 		width: 157.94vh;
-    }
+    }*/
 }
 
 @media screen and (min-aspect-ratio: 3/2) { /* longer landscape */
-    .room-scene__svg-wrapper,
-	.room-scene__image {
+    /*.room__svg-wrapper,
+	.room__image {
         height: 125vh;
 		width: 179.4775vh;
-    }
+    }*/
 }
 
 @media screen and (min-aspect-ratio: 2/1) { /* longest landscape */
-    .room-scene__svg-wrapper,
-	.room-scene__image {
+    /*.room__svg-wrapper,
+	.room__image {
         height: 140vh;
         width: 201.015vh;
-    }
+    }*/
 }
 
 
@@ -217,14 +237,14 @@ ul, li {
   display: none; }
 
 @media screen and (orientation: portrait) {
-    .room-scene__wrapper svg {
+    .room__wrapper svg {
         border: 2px solid #ccccff;
         height: 140vh;
         width: calc( 140vh * 1.43582);
     }
 
     @media screen and (max-aspect-ratio: 3/4) {
-        .room-scene__wrapper svg {
+        .room__wrapper svg {
             border: 2px solid #9999cc;
             height: 125vh;
             width: calc( 125vh * 1.43582);
@@ -232,7 +252,7 @@ ul, li {
     }
 
     @media screen and (max-aspect-ratio: 2/3) {
-        .room-scene__wrapper svg {
+        .room__wrapper svg {
             border: 2px solid #666699;
             height: 110vh;
             width: calc( 110vh * 1.43582);
@@ -240,7 +260,7 @@ ul, li {
     }
 
     @media screen and (max-aspect-ratio: 1/2) {
-        .room-scene__wrapper svg {
+        .room__wrapper svg {
             border: 2px solid #333366;
         }
     }
