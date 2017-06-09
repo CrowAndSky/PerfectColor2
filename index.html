@@ -8,7 +8,7 @@
 
 <body>
 
-<div id="perfect-app-wrapper" class="state-lower-room">
+<div id="perfect-app-wrapper" class="state-lower-room- state-zoom-room">
 
 <div class="intro__wrapper">
 	<div class="intro__message">
@@ -30,7 +30,7 @@
 
 <div class="navigation__wrapper">
 	<div class="navigation__controls navigation__favorites">
-		<h2 class="navigation__controls--title">Favorites So Far</h2>
+		<h2 class="navigation__controls--title">View Favorites</h2>
 		<ul class="navigation__controls-colors">
 			<li class="navigation__controls-color" style="background:#678"></li>
 			<li class="navigation__controls-color" style="background:#dbe"></li>
@@ -55,6 +55,9 @@
 			<mask id="room-mask-inverted" x="0" y="0" width="100" height="100">
 				<image class="room__image" xlink:href="./images/room-mask-inverted.png"  />
 			</mask>
+			<!-- <mask id="room-mask-inverted-zoom" x="0" y="0" width="100" height="100">
+				<image class="room__image room__image--zoom " xlink:href="./images/room-mask-inverted.png"  />
+			</mask> -->
 			<filter id="room-filter-1">
 				<feFlood id="stain-sample__filter--tint" flood-color="#abcdef" result="tintHue" />
 				<feBlend mode="multiply" in="tintHue" in2="SourceGraphic" result="darkenedSample" />
@@ -88,6 +91,10 @@
 		<div class="color__details--solid-overlay color__details--solid-overlay-1"></div>
 		<h1 class="color__details--title color__details--title-1 text-3d ">House Atriedes</h1>
 	</div>
+	<svg class="room__svg room__svg--zoom" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" preserveAspectRatio="xMidYMid slice" viewBox="0 0 1280 1149">
+		<image class="room__image" xlink:href="./images/room3.jpg" filter="url(#room-filter-1)" />
+		<image class="room__image room__image--furniture" xlink:href="./images/room3.jpg" mask="url(#room-mask-inverted)" />
+	</svg>
 </div>
 
 <div class="room__wrapper room-b">

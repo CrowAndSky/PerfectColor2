@@ -1,4 +1,4 @@
-'use strict';
+"use strict";
 
  /* -------------------- INIT VARIABLES ---------------------*/
 var /*--------------------- ### DOM elements ### ---------------------*/
@@ -7,7 +7,7 @@ colorDetails = $( '.color__details' ),
 chipStyleSheet = document.styleSheets[0],
 
 
-/*--------------------- ### wwwwwww ### ---------------------*/
+/*--------------------- ### wwwwwww ### ---------------------
 1, 132, 152
 90, 158, 192
 
@@ -19,6 +19,7 @@ chipStyleSheet = document.styleSheets[0],
 
 191, 210, 201
 110, 194, 196  SW 6766 Mariner
+*/
 
 /*--------------------- ### App State ### ---------------------*/
 inDetailView = false,
@@ -82,23 +83,33 @@ chipStyleSheet.insertRule( "body {"  + cssVar + "}", 1 );
 
 $(document).ready( function(){
 
-//state-favorites
+/*
+state-transition
+state-favorites
+state-detail
+state-lower-room
+.state-app-primed
+*/
 
 $appWrapper.click( function(){
     if ( !inDetailView ) {
-        $appWrapper.addClass( 'inDetailView' );
+        $appWrapper.addClass( 'state-detail' );
         window.setTimeout( function(){
-            $appWrapper.addClass( 'transitionView' );
+            $appWrapper.addClass( 'state-transition' );
         }, 2050);
         inDetailView = true;
     } else {
-        $appWrapper.removeClass( 'inDetailView' );
+        $appWrapper.removeClass( 'state-detail' );
         window.setTimeout( function(){
-            $appWrapper.removeClass( 'transitionView' );
+            $appWrapper.removeClass( 'state-transition' );
         }, 2050);
         inDetailView = false;
     }
 });
+
+window.setTimeout( function(){
+    $appWrapper.addClass( 'state-app-primed' );
+}, 1000);
 
 $( window ).resize(function() {
   handleResize();

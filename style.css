@@ -22,15 +22,31 @@ ul, li {
 
 /* ------------------ ############ GENERAL ############ ------------------ */
 #perfect-app-wrapper {
-    background-color: #fff;
+  background-color: #fff;
 	height: 100%;
 	left: 0;
 	overflow: hidden;
 	position: relative;
 	top: 0;
-    width: 100vw;
+  width: 100vw;
 }
 
+:root{
+  --scale-zoom-factor: 1.8;
+  /*--zoom-s: scale( var(--scale-zoom-factor) * 1 ) translateX( -20% );*/
+  /*--zoom-s: scale( 1.4 ) translateX( 0% );*/
+  --scale-zoom-factor-s: scale(calc( 2 * var(--scale-zoom-factor) ));
+/*
+  var(--zoom-s)
+
+  --indent-xl: calc(2*var(--indent-size));
+  --indent-l: calc(var(--indent-size) + 2px);
+  --indent-s: calc(var(--indent-size) - 2px);
+  --indent-xs: calc(var(--indent-size)/2);*/
+}
+
+
+/* ------------------ ############ APP STATE ############ ------------------ */
 .state-lower-room .room__wrapper--lower {
   z-index: 3;
 }
@@ -68,6 +84,26 @@ ul, li {
     transition: opacity 1s;
 }
 
+/* ------------------ ############ ZOOMED ROOM ############ ------------------ */
+.room__svg--zoom {
+  /*height: 200%;*/
+  transition: transform 1s;
+  /*width: 200%;*/
+  will-change: transform;
+}
+
+.state-app-primed .room__svg--zoom {
+}
+
+.state-zoom-room .room__svg--zoom {
+  transform: var(--scale-zoom-factor-s);
+  /*transform: scale( 1.2 ) translateX( -25% );*/
+}
+
+.room__image--zoom {
+  /*height: 150%;
+  width: 150%;*/
+}
 
 /* ------------------ ############ COLOR DETAILS ############ ------------------ */
 .color__details {
@@ -145,28 +181,28 @@ ul, li {
 }
 
 /* ------------------ ############ STATE TRANSITIONS ############ ------------------ */
-.inDetailView .room__image--furniture {
+.state-detail .room__image--furniture {
     opacity: 0;
 }
 
-.inDetailView .color__details--solid-overlay {
+.state-detail .color__details--solid-overlay {
     opacity: 1;
 }
 
-.inDetailView .color__details--title {
+.state-detail .color__details--title {
     opacity: 1;
 }
 
-.transitionView .color__details--solid-overlay {
+.state-transition .color__details--solid-overlay {
     transition: opacity 0.5s;
     transition-delay: 0.5s;
 }
 
-.transitionView .color__details--title {
+.state-transition .color__details--title {
     transition-delay: 0s;
 }
 
-.transitionView .room__image--furniture {
+.state-transition .room__image--furniture {
     transition: opacity 1s;
     transition-delay: 1s;
 }
@@ -180,8 +216,6 @@ ul, li {
   justify-content: center;
   height: 6vw;
   min-height: 30px;
-
-  /*width: auto;*/
 }
 
 .intro__wrapper {
@@ -205,7 +239,7 @@ ul, li {
   background-color: rgba( 0, 0, 0, .5 );
   color: #fff;
   font-size: calc( 6px + 1.25vw);
-  z-index: 3;
+  z-index: 4;
 }
 
 .app-title {
@@ -268,8 +302,8 @@ ul, li {
 .navigation__controls-color {
   border-radius: 50%;
   display: inline-block;
-  height: 3vw;
-  width: 3vw;
+  height: 2vw;
+  width: 2vw;
 }
 
 
@@ -288,6 +322,18 @@ ul, li {
     .color__details--title {
       font-size: 1.2em;
     }
+}
+
+@media screen and ( max-width: 800px ) {
+  .room__svg--zoom {
+    /*height: 150%;
+    width: 150%;*/
+  }
+}
+
+@media screen and ( max-width: 800px ) {
+  .room__svg--zoom {
+  }
 }
 
 @media screen and ( max-width: 800px ) {
@@ -315,9 +361,20 @@ ul, li {
   }
 }
 
+@media screen and ( max-width: 800px ) {
+  .room__svg--zoom {
+  }
+}
+
+@media screen and ( max-width: 800px ) {
+  .room__svg--zoom {
+  }
+}
+
 @media screen and ( max-width: 800px ) and ( orientation: landscape ) {
-  * {
-    /*color: red !important;*/
+  .room__svg--zoom {
+    height: 150%;
+    width: 150%;
   }
 }
 
