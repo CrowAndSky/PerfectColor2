@@ -8,7 +8,7 @@
 
 <body>
 
-<div id="perfect-app-wrapper" class="state-lower-room- state-zoom-room">
+<div id="perfect-app-wrapper" class="state-lower-room- state-zoom-room state-detail state-transition">
 
 <div class="intro__wrapper">
 	<div class="intro__message">
@@ -54,6 +54,11 @@
 		<defs class="svg-defs-wrapper">
 			<mask id="room-mask-inverted" x="0" y="0" width="100" height="100">
 				<image class="room__image" xlink:href="./images/room-mask-inverted.png"  />
+			</mask>
+			<mask id="color-title" x="0" y="0" width="100" height="100">
+				<text x="50%" y="50%" stroke="none" fill="#999999">
+			    	Masking Text String
+				</text>
 			</mask>
 			<!-- <mask id="room-mask-inverted-zoom" x="0" y="0" width="100" height="100">
 				<image class="room__image room__image--zoom " xlink:href="./images/room-mask-inverted.png"  />
@@ -104,7 +109,10 @@
 	</svg>
 	<div class="color__details">
 		<div class="color__details--solid-overlay color__details--solid-overlay-2"></div>
-		<h1 class="color__details--title color__details--title-2 text-3d text-3d--light">Bauhaus Buff</h1>
+		<svg class="room__svg" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" preserveAspectRatio="xMidYMid slice" viewBox="0 0 1280 1149">
+			<image class="room__image" xlink:href="./images/room3.jpg" filter="url(#room-filter-2)"  mask="url(#color-title)" />
+		</svg>
+		<!-- <h1 class="color__details--title color__details--title-2 text-3d text-3d--light">Bauhaus Buff</h1> -->
 	</div>
 </div>
 
